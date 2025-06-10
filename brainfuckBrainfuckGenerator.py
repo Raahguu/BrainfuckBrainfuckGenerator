@@ -33,5 +33,8 @@ for char in sanitised_brainfuck:
         cursor_index -= 1
     new_code += "."
 
+char_count_to_new_line = 50
+for i in range(1, len(new_code)//char_count_to_new_line + 1):
+    new_code = new_code[:i * char_count_to_new_line] + "\n" + new_code[i * char_count_to_new_line:]
 
 print(f"The new brainfuck code: \n{setup_code}\n{new_code}")
