@@ -16,7 +16,7 @@ This example uses the code:
 
 which prints out `Hello World!!!`
 
-```text
+```brainfuck
 Input your Brainfuck:
 +++++++++[>++++++++<-]>.>++++++++++[>++++++++++<-]>+.+++++++..+++.
 >++++++[>+++++<-]>++.
