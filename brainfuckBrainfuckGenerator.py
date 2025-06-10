@@ -55,6 +55,13 @@ for i, char in enumerate(new_code):
     char_diff += len(insertion) - len(replaced_code)
     repeat_count = 0
 
+#Get rid of useless '><' and '<>' occurences
+old_code = ""
+while new_code != old_code:
+    old_code = new_code
+    new_code = new_code.replace("<>", "")
+    new_code = new_code.replace("><", "")
+
 #Wraps text lines to a cap
 char_count_to_new_line = 50
 for i in range(1, len(new_code)//char_count_to_new_line + 1):
