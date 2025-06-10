@@ -1,16 +1,20 @@
-setup_code="""+++++++[>++++++<-]>+>>
-+++++++[<++++++>-]<+++>>
-++++++++[<++++++>-]<-->>
-++++++++[<++++++++>-]<-->>
-++++++++[<++++++++>-]<---->>
-++++++++++[<+++++++++>-]<+>>
-++++++++++[<+++++++++>-]<+++<<<<<<<"""
+setup_code="""+++++++[>++++++<-]>+>>+++++++[<++++++>-]<+++>>
+++++++++[<++++++>-]<-->>++++++++[<++++++++>-]<-->>
+++++++++[<++++++++>-]<---->>++++++++++[<+++++++++>-]<+>>
+++++++++++[<+++++++++>-]<+++>++++++++++<<<<<<<<"""
 
-background_memory_array = [0, "+", "-", ".", ">", "<", "[", "]"]
+background_memory_array = [0, "+", "-", ".", ">", "<", "[", "]", "\n"]
 cursor_index = 0
-allowed_characters = "+-.><[]"
+allowed_characters = "+-.><[]\n"
 
-original_brainfuck = input("Input your Brainfuck: \n")
+print("Input your Brainfuck:")
+original_brainfuck = ""
+while True:
+    inp = input()
+    if inp.strip() == "": break
+    original_brainfuck += inp  + "\n"
+
+original_brainfuck = original_brainfuck[:-1]
 
 #Remove unnecessary characters
 sanitised_brainfuck = "".join([char if char in allowed_characters else "" for char in list(original_brainfuck)])
@@ -28,5 +32,6 @@ for char in sanitised_brainfuck:
         offset += 1
         cursor_index -= 1
     new_code += "."
+
 
 print(f"The new brainfuck code: \n{setup_code}\n{new_code}")
