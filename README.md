@@ -1,0 +1,5 @@
+# Brainfuck Brainfuck Generator
+
+This is a python program that the user enters `brainfuck` code into, and it gets converted into `brainfuck` code that outputs the original `brainfuck` code.
+
+Please Note: All comments in the code are removed as they are deemed uneccessary
